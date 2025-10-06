@@ -1,12 +1,12 @@
 // src/components/MobileNavbar.jsx
-import { Home, ChefHat, Coffee, User } from 'lucide-react';
+import { Home, BookOpen, Heart, User } from 'lucide-react';
 
 export default function MobileNavbar({ currentPage, onNavigate }) {
   const navItems = [
     { id: 'home', label: 'Beranda', icon: Home },
-    { id: 'makanan', label: 'Makanan', icon: ChefHat },
-    { id: 'minuman', label: 'Minuman', icon: Coffee },
-    { id: 'profile', label: 'Profile', icon: User }
+    { id: 'recipes', label: 'Resep', icon: BookOpen },
+    { id: 'favorites', label: 'Favorit', icon: Heart },
+    { id: 'profile', label: 'Profile', icon: User },
   ];
 
   return (
@@ -15,7 +15,7 @@ export default function MobileNavbar({ currentPage, onNavigate }) {
         {navItems.map((item) => {
           const IconComponent = item.icon;
           const isActive = currentPage === item.id;
-          
+
           return (
             <button
               key={item.id}
@@ -24,10 +24,11 @@ export default function MobileNavbar({ currentPage, onNavigate }) {
                 isActive ? 'text-blue-600' : 'text-gray-400'
               }`}
             >
-              <IconComponent 
-                size={20} 
+              <IconComponent
+                size={20}
                 className="mb-1"
                 strokeWidth={isActive ? 2 : 1.5}
+                fill={item.id === 'favorites' && isActive ? 'currentColor' : 'none'}
               />
               <span className="text-xs font-medium">
                 {item.label}

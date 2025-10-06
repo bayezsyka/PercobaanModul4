@@ -1,10 +1,14 @@
 // src/components/home/HeroSection.jsx
 import { ChefHat, Play, ArrowRight } from 'lucide-react';
 
-export default function HeroSection() {
+export default function HeroSection({ onNavigate }) {
+  const handleExplore = () => {
+    onNavigate?.('recipes');
+  };
+
   return (
     <section className="relative overflow-hidden min-h-screen md:min-h-[85vh] flex items-center">
-        
+
       <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-32 right-12 w-32 h-32 bg-gradient-to-r from-purple-300/20 to-pink-300/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
       <div className="absolute top-1/3 right-8 w-24 h-24 bg-gradient-to-r from-cyan-200/30 to-blue-200/30 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2.5s' }} />
@@ -34,7 +38,7 @@ export default function HeroSection() {
             <div className="relative group">
               <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-2xl overflow-hidden shadow-xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105">
                 <div className="w-full h-40 overflow-hidden">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Featured Recipe"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -48,7 +52,7 @@ export default function HeroSection() {
               <div className="relative group">
                 <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-2xl overflow-hidden shadow-xl shadow-indigo-500/10 hover:shadow-indigo-500/20 transition-all duration-500 hover:scale-105">
                   <div className="w-full h-20 overflow-hidden">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&h=150&fit=crop&crop=center"
                       alt="Featured Recipe 2"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -60,7 +64,7 @@ export default function HeroSection() {
               <div className="relative group">
                 <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-2xl overflow-hidden shadow-xl shadow-purple-500/10 hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105">
                   <div className="w-full h-20 overflow-hidden">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=200&h=150&fit=crop&crop=center"
                       alt="Featured Drink"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -74,7 +78,10 @@ export default function HeroSection() {
 
         {/* Action Buttons */}
         <div className="flex flex-col space-y-3 max-w-xs mx-auto">
-          <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-sm">
+          <button
+            onClick={handleExplore}
+            className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-3 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2 text-sm"
+          >
             <ChefHat className="w-4 h-4" />
             <span>Jelajahi Resep</span>
           </button>
@@ -87,7 +94,7 @@ export default function HeroSection() {
 
       <div className="hidden md:block relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <div className="mb-10">
@@ -108,7 +115,10 @@ export default function HeroSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-10 py-5 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 text-lg">
+              <button
+                onClick={handleExplore}
+                className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-10 py-5 rounded-2xl font-semibold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 text-lg"
+              >
                 <ChefHat className="w-6 h-6" />
                 <span>Jelajahi Resep</span>
                 <ArrowRight className="w-5 h-5" />
@@ -126,7 +136,7 @@ export default function HeroSection() {
               <div className="relative group">
                 <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-3xl overflow-hidden shadow-xl shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-500 hover:scale-105">
                   <div className="w-full h-80 overflow-hidden">
-                    <img 
+                    <img
                       src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Featured Recipe"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -140,7 +150,7 @@ export default function HeroSection() {
                 <div className="relative group">
                   <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-3xl overflow-hidden shadow-xl shadow-indigo-500/10 hover:shadow-indigo-500/20 transition-all duration-500 hover:scale-105">
                     <div className="w-full h-40 overflow-hidden">
-                      <img 
+                      <img
                         src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop&crop=center"
                         alt="Featured Recipe 2"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -152,7 +162,7 @@ export default function HeroSection() {
                 <div className="relative group">
                   <div className="bg-white/15 backdrop-blur-2xl border border-white/25 rounded-3xl overflow-hidden shadow-xl shadow-purple-500/10 hover:shadow-purple-500/20 transition-all duration-500 hover:scale-105">
                     <div className="w-full h-40 overflow-hidden">
-                      <img 
+                      <img
                         src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=250&fit=crop&crop=center"
                         alt="Featured Drink"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

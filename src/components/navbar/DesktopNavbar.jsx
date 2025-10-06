@@ -4,16 +4,16 @@ import logoUrl from '../../assets/LOGORN.png';
 export default function DesktopNavbar({ currentPage, onNavigate }) {
   const navItems = [
     { id: 'home', label: 'Beranda' },
-    { id: 'makanan', label: 'Makanan' },
-    { id: 'minuman', label: 'Minuman' },
-    { id: 'profile', label: 'Profile' }
+    { id: 'recipes', label: 'Katalog Resep' },
+    { id: 'favorites', label: 'Favorit' },
+    { id: 'profile', label: 'Profile' },
   ];
 
   return (
     <nav className="hidden md:block shadow-lg border-b border-blue-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
+
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <div className="relative group">
@@ -52,7 +52,7 @@ export default function DesktopNavbar({ currentPage, onNavigate }) {
               </button>
             ))}
           </div>
-         
+
         </div>
       </div>
     </nav>
